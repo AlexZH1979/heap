@@ -5,9 +5,17 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        List<Object> list = new ArrayList<>();
-        while (true){
-            list.add(new Object());
+        try {
+            //List<List<Object>> list = new ArrayList<>();
+            Thread thread = new Thread(new MemoryListener());
+            thread.setDaemon(true);
+            thread.start();
+            while (true) {
+                //list.add(new ArrayList<>(100));
+                HeapGarbage heapGarbage = new HeapGarbage();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
