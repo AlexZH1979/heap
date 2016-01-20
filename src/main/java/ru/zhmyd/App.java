@@ -1,17 +1,18 @@
 package ru.zhmyd;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryPoolMXBean;
+import java.lang.management.MemoryType;
+import java.lang.management.MemoryUsage;
+import java.util.Iterator;
 
 public class App {
     public static void main(String[] args) {
-        try {
-            //List<List<Object>> list = new ArrayList<>();
+       try {
             Thread thread = new Thread(new MemoryListener());
             thread.setDaemon(true);
             thread.start();
             while (true) {
-                //list.add(new ArrayList<>(100));
                 HeapGarbage heapGarbage = new HeapGarbage();
             }
         }catch (Exception e){

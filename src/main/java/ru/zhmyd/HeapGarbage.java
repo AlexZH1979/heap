@@ -8,6 +8,7 @@ public class HeapGarbage {
     private List list = new ArrayList(10000);
     @Override
     public void finalize(){
-        while(true){}
+        while(true){
+        }
     }
 }
